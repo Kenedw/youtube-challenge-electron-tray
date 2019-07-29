@@ -18,7 +18,9 @@ const store = new Store({ schema });
 
 let tray = null;
 
-app.dock.hide();
+if (app.dock) {
+  app.dock.hide();
+}
 
 function render(tray) {
   const storedProjects = store.get('projects');
